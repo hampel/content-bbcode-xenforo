@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="custom_bb_code_desc.post" version_id="1" version_string="0.1.0"><![CDATA[Links to the specified post with anchor text]]></phrase>
+  <phrase title="custom_bb_code_desc.thread" version_id="1" version_string="0.1.0"><![CDATA[Links to the specified thread with anchor text]]></phrase>
+  <phrase title="custom_bb_code_example.post" version_id="1" version_string="0.1.0"><![CDATA[[post=12]view this post[/post]]]></phrase>
+  <phrase title="custom_bb_code_example.thread" version_id="1" version_string="0.1.0"><![CDATA[[thread=10]view this thread[/thread]]]></phrase>
+  <phrase title="custom_bb_code_output.post" version_id="1" version_string="0.1.0"><![CDATA[]]></phrase>
+  <phrase title="custom_bb_code_output.thread" version_id="1" version_string="0.1.0"><![CDATA[]]></phrase>
+  <phrase title="custom_bb_code_title.post" version_id="1" version_string="0.1.0"><![CDATA[Post link]]></phrase>
+  <phrase title="custom_bb_code_title.thread" version_id="1" version_string="0.1.0"><![CDATA[Thread link]]></phrase>
+</phrases>
