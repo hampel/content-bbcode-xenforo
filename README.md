@@ -21,7 +21,7 @@ In post content (or anywhere that BBCode is allowed), the following substitution
 
 ... will be rendered as:
 
- ```html
+```html
 <a href="http://www.example.com/community/index.php?threads/1/">see this thread</a>
 ```
 
@@ -33,6 +33,6 @@ Similarly with posts
 
 ... will be rendered as:
 
- ```html
+```html
 <a href="http://www.example.com/community/index.php?posts/2/">see this post</a>
 ```
