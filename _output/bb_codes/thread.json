@@ -4,7 +4,7 @@
     "replace_html": "",
     "replace_html_email": "",
     "replace_text": "",
-    "callback_class": "ThreadPostBbCode\\BbCode\\Tag",
+    "callback_class": "Hampel\\ThreadPostBbCode\\BbCode\\Tag",
     "callback_method": "renderTag",
     "option_regex": "/^(\\d+)$/i",
     "trim_lines_after": 0,
