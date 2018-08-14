@@ -1,4 +1,4 @@
-<?php namespace ThreadPostBbCode\BbCode;
+<?php namespace Hampel\ThreadPostBbCode\BbCode;
 
 class Tag
 {
