@@ -52,6 +52,12 @@ class Tag
 
 		if (empty($children)) $children = $link; // using the body as id, so render a full URL to display in the thread instead
 
+		if ($renderer instanceof \XF\BbCode\Renderer\SimpleHtml
+			|| $renderer instanceof \XF\BbCode\Renderer\EmailHtml)
+		{
+			return '<a href="' . htmlspecialchars($link) . '">' . $children . '</a>';
+		}
+
 		$linkInfo = $formatter->getLinkClassTarget($link);
 
 		$classAttr = $linkInfo['class'] ? " class=\"$linkInfo[class]\"" : '';
