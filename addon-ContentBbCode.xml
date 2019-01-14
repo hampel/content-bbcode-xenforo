@@ -25,6 +25,8 @@
     <phrase title="custom_bb_code_tag_title" global_cache="1" version_id="1050010" version_string="1.5.0"><![CDATA[Tag link]]></phrase>
     <phrase title="custom_bb_code_thread_desc" version_id="1050010" version_string="1.5.0"><![CDATA[Link to thread by ID]]></phrase>
     <phrase title="custom_bb_code_thread_title" global_cache="1" version_id="1050010" version_string="1.5.0"><![CDATA[Thread Link]]></phrase>
+    <phrase title="custom_bb_code_xfmg_desc" version_id="1050010" version_string="1.5.0"><![CDATA[Link to Media items and generate URLs for images and thumbnails]]></phrase>
+    <phrase title="custom_bb_code_xfmg_title" global_cache="1" version_id="1050010" version_string="1.5.0"><![CDATA[XFMG BBCode Helpers]]></phrase>
   </phrases>
   <route_prefixes/>
   <style_properties/>
@@ -69,6 +71,20 @@
       <example><![CDATA[[THREAD=1]This is a thread[/THREAD]
 
 [THREAD]1[/THREAD]]]></example>
+    </bb_code>
+    <bb_code bb_code_id="xfmg" bb_code_mode="callback" has_option="yes" callback_class="ContentBbCode_BbCode_Xfmg" callback_method="xfmgTag" option_regex="" trim_lines_after="0" plain_children="0" disable_smilies="0" disable_nl2br="0" disable_autolink="1" allow_empty="0" allow_signature="1" editor_icon_url="" sprite_mode="0" active="1">
+      <replace_html><![CDATA[]]></replace_html>
+      <replace_html_email><![CDATA[]]></replace_html_email>
+      <replace_text><![CDATA[]]></replace_text>
+      <example><![CDATA[[XFMG=media,100]media link text[/XFMG]
+
+[XFMG=category,500]category link text[/XFMG]
+
+[XFMG=album,900]album link text[/XFMG]
+
+[XFMG=img,1000]img alt text[/XFMG]
+
+[XFMG=thumb,2000]thumbnail alt text[/XFMG]]]></example>
     </bb_code>
   </bb_codes>
 </addon>
