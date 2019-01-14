@@ -16,11 +16,33 @@
     <permissions/>
     <interface_groups/>
   </permissions>
-  <phrases/>
+  <phrases>
+    <phrase title="custom_bb_code_post_desc" version_id="1050010" version_string="1.5.0"><![CDATA[Link to post by ID]]></phrase>
+    <phrase title="custom_bb_code_post_title" global_cache="1" version_id="1050010" version_string="1.5.0"><![CDATA[Post Link]]></phrase>
+    <phrase title="custom_bb_code_thread_desc" version_id="1050010" version_string="1.5.0"><![CDATA[Link to thread by ID]]></phrase>
+    <phrase title="custom_bb_code_thread_title" global_cache="1" version_id="1050010" version_string="1.5.0"><![CDATA[Thread Link]]></phrase>
+  </phrases>
   <route_prefixes/>
   <style_properties/>
   <templates/>
   <public_template_modifications/>
   <bb_code_media_sites/>
-  <bb_codes/>
+  <bb_codes>
+    <bb_code bb_code_id="post" bb_code_mode="callback" has_option="optional" callback_class="ContentBbCode_BbCode_Post" callback_method="postTag" option_regex="" trim_lines_after="0" plain_children="0" disable_smilies="0" disable_nl2br="0" disable_autolink="1" allow_empty="0" allow_signature="1" editor_icon_url="" sprite_mode="0" active="1">
+      <replace_html><![CDATA[]]></replace_html>
+      <replace_html_email><![CDATA[]]></replace_html_email>
+      <replace_text><![CDATA[]]></replace_text>
+      <example><![CDATA[[POST=1]This is a post[/POST]
+
+[POST]1[/POST]]]></example>
+    </bb_code>
+    <bb_code bb_code_id="thread" bb_code_mode="callback" has_option="optional" callback_class="ContentBbCode_BbCode_Thread" callback_method="threadTag" option_regex="" trim_lines_after="0" plain_children="0" disable_smilies="0" disable_nl2br="0" disable_autolink="1" allow_empty="0" allow_signature="1" editor_icon_url="" sprite_mode="0" active="1">
+      <replace_html><![CDATA[]]></replace_html>
+      <replace_html_email><![CDATA[]]></replace_html_email>
+      <replace_text><![CDATA[]]></replace_text>
+      <example><![CDATA[[THREAD=1]This is a thread[/THREAD]
+
+[THREAD]1[/THREAD]]]></example>
+    </bb_code>
+  </bb_codes>
 </addon>
