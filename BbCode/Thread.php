@@ -4,13 +4,6 @@ class Thread
 {
 	public static function renderTagThread($tagChildren, $tagOption, $tag, array $options, \XF\BbCode\Renderer\AbstractRenderer $renderer)
 	{
-		$tags = ['thread', 'post'];
-
-		if (!in_array($tag['tag'], $tags))
-		{
-			return $renderer->renderUnparsedTag($tag, $options);
-		}
-
 		$id = intval($tagOption);
 
 		if (!$id)
@@ -41,14 +34,7 @@ class Thread
 		$router = \XF::app()->router('public');
 		$formatter = \XF::app()->stringFormatter();
 
-		if ($tag['tag'] == 'thread')
-		{
-			$link = $router->buildLink('canonical:threads', ['thread_id' => $id]);
-		}
-		else // post
-		{
-			$link = $router->buildLink('canonical:posts', ['post_id' => $id]);
-		}
+		$link = $router->buildLink('canonical:threads', ['thread_id' => $id]);
 
 		if (empty($children)) $children = $link; // using the body as id, so render a full URL to display in the thread instead
 
