@@ -1,8 +1,8 @@
-<?php namespace Hampel\ThreadPostBbCode\BbCode;
+<?php namespace Hampel\ContentBbCode\BbCode;
 
-class Tag
+class Thread
 {
-	public static function renderTag($tagChildren, $tagOption, $tag, array $options, \XF\BbCode\Renderer\AbstractRenderer $renderer)
+	public static function renderTagThread($tagChildren, $tagOption, $tag, array $options, \XF\BbCode\Renderer\AbstractRenderer $renderer)
 	{
 		$tags = ['thread', 'post'];
 
