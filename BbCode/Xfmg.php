@@ -68,7 +68,12 @@ class Xfmg
 
 		if ($format == 'link')
 		{
-			return '<a href="' . htmlspecialchars($url) . '" class="internalLink">' . $text . '</a>';
+			$formatter = \XF::app()->stringFormatter();
+			$linkInfo = $formatter->getLinkClassTarget($url);
+
+			$classAttr = $linkInfo['class'] ? " class=\"$linkInfo[class]\"" : '';
+
+			return '<a href="' . htmlspecialchars($url) . '"' . $classAttr . '>' . $text . '</a>';
 		}
 		else
 		{
