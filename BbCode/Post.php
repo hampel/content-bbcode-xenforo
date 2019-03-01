@@ -1,4 +1,4 @@
-<?php namespace Hampel\ContentBBcode\BbCode;
+<?php namespace Hampel\ContentBbCode\BbCode;
 
 class Post
 {
