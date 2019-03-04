@@ -17,7 +17,7 @@ class Search
 		}
 		else
 		{
-			$parts = explode(';', $tagOption);
+			$parts = explode(',', $tagOption);
 			foreach ($parts AS &$part)
 			{
 				$part = trim($part);
