@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-2.0.0b1 (2019-03-04)
---------------------
+2.0.0 (2019-03-05)
+------------------
 
 * migrated to XF v2.0
 * added new SEARCH options for XFMG comments and user profiles
