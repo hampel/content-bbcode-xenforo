@@ -1,8 +1,26 @@
 {
+    "forum.json": {
+        "hash": "e7799acfa03a35db907382b365ca8b9a"
+    },
     "post.json": {
-        "hash": "b9dd58143cabd273f7189ec224b4194b"
+        "hash": "ed6368825710aa64ec4c3453af452141"
+    },
+    "prefix.json": {
+        "hash": "5185b3f44d89dd6c8ef434d1c174f1ac"
+    },
+    "resource.json": {
+        "hash": "3118ae1e18265bb43515f86069217dac"
+    },
+    "search.json": {
+        "hash": "ed127ae8d6fe1e0fe13d65305d1556c8"
+    },
+    "tag.json": {
+        "hash": "019344e066eb65e0d938d8a58136a1c0"
     },
     "thread.json": {
-        "hash": "b9dd58143cabd273f7189ec224b4194b"
+        "hash": "76b845d4ec9c54e147bc240c01e06efd"
+    },
+    "xfmg.json": {
+        "hash": "478cf21acfdde4f96108c28e0adcbc37"
     }
 }

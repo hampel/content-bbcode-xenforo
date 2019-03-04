@@ -1,0 +1,11 @@
+[SEARCH]search term[/SEARCH]
+
+[SEARCH=forum]search term[/SEARCH]
+
+[SEARCH=forum; search term]link text[/SEARCH]
+
+[SEARCH=threads]search term[/SEARCH]
+
+[SEARCH=site]search term[/SEARCH]
+
+[SEARCH=web]search term[/SEARCH]

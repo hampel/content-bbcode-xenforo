@@ -1,15 +1,15 @@
 {
     "legacy_addon_id": "ThreadPostBbCode",
-    "title": "[thread] and [post] BBCode",
-    "description": "Adds [thread] and [post] BBCode tags",
-    "version_id": 1000170,
-    "version_string": "1.0.1",
+    "title": "Content BBCode",
+    "description": "Adds BBCode tags for linking to different types of XenForo content",
+    "version_id": 2000070,
+    "version_string": "2.0.0",
     "dev": "Simon Hampel",
     "dev_url": "https://bitbucket.org/hampel/",
     "faq_url": "",
-    "support_url": "https://bitbucket.org/hampel/thread-post-bbcode-xenforo/issues",
+    "support_url": "https://bitbucket.org/hampel/content-bbcode-xenforo/issues",
     "extra_urls": {
-        "Git Repository": "https://bitbucket.org/hampel/thread-post-bbcode-xenforo",
+        "Git Repository": "https://bitbucket.org/hampel/content-bbcode-xenforo",
         "Twitter": "https://twitter.com/SimonHampel"
     },
     "require": {

@@ -1,0 +1,3 @@
+[FORUM=1]This is a forum[/FORUM]
+
+[FORUM]1[/FORUM]

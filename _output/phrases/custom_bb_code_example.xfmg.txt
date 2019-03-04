@@ -1,0 +1,9 @@
+[XFMG=media,100]media link text[/XFMG]
+
+[XFMG=category,500]category link text[/XFMG]
+
+[XFMG=album,900]album link text[/XFMG]
+
+[XFMG=img,1000]img alt text[/XFMG]
+
+[XFMG=thumb,2000]thumbnail alt text[/XFMG]
