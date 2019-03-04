@@ -11,7 +11,7 @@ This addon creates additional BBCodes for linking to various content found on Xe
  * post
  * search (see below for details)
  * tag
- * XFMG
+ * xfmg
  	* media
  	* category
  	* album
