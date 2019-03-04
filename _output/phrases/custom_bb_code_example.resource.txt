@@ -1,0 +1,3 @@
+[RESOURCE=1]This is a resource[/RESOURCE]
+
+[RESOURCE]1[/RESOURCE]
