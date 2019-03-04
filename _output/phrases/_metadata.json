@@ -11,6 +11,12 @@
         "version_string": "2.0.0 Beta 1",
         "hash": "d16789a8b28689ad8ecc3e7f3c2a2c33"
     },
+    "custom_bb_code_desc.prefix.txt": {
+        "global_cache": false,
+        "version_id": 2000031,
+        "version_string": "2.0.0 Beta 1",
+        "hash": "c0a977950c9d21fb57385deb72c9efaf"
+    },
     "custom_bb_code_desc.search.txt": {
         "global_cache": false,
         "version_id": 2000031,
@@ -47,6 +53,12 @@
         "version_string": "2.0.0 Beta 1",
         "hash": "b0e4dac03f179d545f97ee03cc323569"
     },
+    "custom_bb_code_example.prefix.txt": {
+        "global_cache": false,
+        "version_id": 2000031,
+        "version_string": "2.0.0 Beta 1",
+        "hash": "4dd29baa6e7b63c13378aa4bc127e666"
+    },
     "custom_bb_code_example.search.txt": {
         "global_cache": false,
         "version_id": 2000031,
@@ -78,6 +90,12 @@
         "hash": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "custom_bb_code_output.post.txt": {
+        "global_cache": false,
+        "version_id": 2000031,
+        "version_string": "2.0.0 Beta 1",
+        "hash": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "custom_bb_code_output.prefix.txt": {
         "global_cache": false,
         "version_id": 2000031,
         "version_string": "2.0.0 Beta 1",
@@ -118,6 +136,12 @@
         "version_id": 2000031,
         "version_string": "2.0.0 Beta 1",
         "hash": "fa5a8c55d7bbdfa6b1097f5005b7f8cf"
+    },
+    "custom_bb_code_title.prefix.txt": {
+        "global_cache": false,
+        "version_id": 2000031,
+        "version_string": "2.0.0 Beta 1",
+        "hash": "44ed7025bbd84fcd7aed5359fe85ed64"
     },
     "custom_bb_code_title.search.txt": {
         "global_cache": false,
