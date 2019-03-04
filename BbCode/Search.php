@@ -57,18 +57,25 @@ class Search
 				break;
 			case 'thread':
 			case 'threads':
-				$url = $router->buildLink('canonical:search/search', [], ['keywords' => $term, 'type' => 'thread']);
+				$url = $router->buildLink('canonical:search/search', [], ['keywords' => $term, 'search_type' => 'post', 'grouped' => 1]);
 				break;
 			case 'post':
 			case 'posts':
-				$url = $router->buildLink('canonical:search/search', [], ['keywords' => $term, 'type' => 'post']);
+				$url = $router->buildLink('canonical:search/search', [], ['keywords' => $term, 'search_type' => 'post']);
 				break;
 			case 'resource':
 			case 'resources':
-				$url = $router->buildLink('canonical:search/search', [], ['keywords' => $term, 'type' => 'resource_update']);
+				$url = $router->buildLink('canonical:search/search', [], ['keywords' => $term, 'search_type' => 'resource']);
 				break;
 			case 'media':
-				$url = $router->buildLink('canonical:search/search', [], ['keywords' => $term, 'type' => 'xengallery_media']);
+			case 'gallery':
+				$url = $router->buildLink('canonical:search/search', [], ['keywords' => $term, 'search_type' => 'xfmg_media']);
+				break;
+			case 'comments':
+				$url = $router->buildLink('canonical:search/search', [], ['keywords' => $term, 'search_type' => 'xfmg_comment']);
+				break;
+			case 'profiles':
+				$url = $router->buildLink('canonical:search/search', [], ['keywords' => $term, 'search_type' => 'profile_post']);
 				break;
 			case 'tag':
 			case 'tags':
