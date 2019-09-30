@@ -1,0 +1,10 @@
+{
+	"require-dev": {
+		"hampel/xenforo-test-framework": "dev-develop"
+	},
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
