@@ -1,9 +1,9 @@
 {
-    "legacy_addon_id": "ThreadPostBbCode",
+    "legacy_addon_id": "ContentBbCode",
     "title": "Content BBCode",
     "description": "Adds BBCode tags for linking to different types of XenForo content",
-    "version_id": 2000070,
-    "version_string": "2.0.0",
+    "version_id": 2000170,
+    "version_string": "2.0.1",
     "dev": "Simon Hampel",
     "dev_url": "https://bitbucket.org/hampel/",
     "faq_url": "",
@@ -16,6 +16,10 @@
         "php": [
             "5.4.0",
             "PHP 5.4+"
+        ],
+        "XF": [
+            "2000070",
+            "XenForo 2.0.0+"
         ]
     },
     "icon": "fa-link"

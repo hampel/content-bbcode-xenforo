@@ -1,7 +1,7 @@
 Content BBCode for XenForo 2.x
 ==============================
 
-Note: this XenForo 2.0 addon replaces the `ThreadPostBbCode` addon released for XF 1.5 (and unreleased for XF 2.0).
+Note: this XenForo 2.0 addon replaces the `ThreadPostBbCode` addon released for XF 2.0
 
 By [Simon Hampel](https://twitter.com/SimonHampel).
 
