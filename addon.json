@@ -1,5 +1,5 @@
 {
-    "legacy_addon_id": "ThreadPostBbCode",
+    "legacy_addon_id": "ContentBbCode",
     "title": "Content BBCode",
     "description": "Adds BBCode tags for linking to different types of XenForo content",
     "version_id": 2000070,
