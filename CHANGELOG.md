@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+2.0.1 (2020-06-09)
+------------------
+
+* change legacy_addon_id to ContentBbCode so we can upgrade from v1.5 version
+
 2.0.0 (2019-03-05)
 ------------------
 
