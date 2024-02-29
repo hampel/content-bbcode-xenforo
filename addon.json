@@ -5,12 +5,12 @@
     "version_id": 2000170,
     "version_string": "2.0.1",
     "dev": "Simon Hampel",
-    "dev_url": "https://bitbucket.org/hampel/",
+    "dev_url": "https://xenforo.com/community/members/sim.4264/",
     "faq_url": "",
-    "support_url": "https://bitbucket.org/hampel/content-bbcode-xenforo/issues",
+    "support_url": "https://xenforo.com/community/threads/content-bbcode.148692/",
     "extra_urls": {
-        "Git Repository": "https://bitbucket.org/hampel/content-bbcode-xenforo",
-        "Twitter": "https://twitter.com/SimonHampel"
+        "Addon": "https://xenforo.com/community/resources/content-bbcode.6484/",
+        "Git Repository": "https://github.com/hampel/content-bbcode-xenforo"
     },
     "require": {
         "php": [

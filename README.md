@@ -1,9 +1,13 @@
 Content BBCode for XenForo 2.x
 ==============================
 
-Note: this XenForo 2.0 addon replaces the `ThreadPostBbCode` addon released for XF 2.0
+Note: this XenForo 2.x addon replaces the `ThreadPostBbCode` addon released for XF 2.0
 
-By [Simon Hampel](https://twitter.com/SimonHampel).
+By [Simon Hampel](https://xenforo.com/community/members/sim.4264/).
+
+* [Addon: Content BBCode](https://xenforo.com/community/resources/content-bbcode.6484/)
+* [Discussion and support: Content BBCode](https://xenforo.com/community/threads/content-bbcode.148692/)
+
 
 This addon creates additional BBCodes for linking to various content found on XenForo forums:
  
@@ -52,7 +56,7 @@ If you just want to use the thread and post tags, you can always disable the oth
 Requirements
 ------------
 
-This addon requires PHP 5.4 or higher and has been tested with XF v2.0 and v2.1 
+This addon requires PHP 5.4 or higher and has been tested with XF v2.0, v2.1 and v2.2b2 
 
 Usage
 -----
