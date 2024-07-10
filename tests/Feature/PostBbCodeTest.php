@@ -13,6 +13,7 @@ class PostBbCodeTest extends TestCase
 		$options = $this->app()->options();
 
 		$this->boardUrl = $options['boardUrl'];
+        $options['useFriendlyUrls'] = true;
 	}
 
 	// ------------------------------------------------
