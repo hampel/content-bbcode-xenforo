@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+2.0.2 (2024-07-10)
+------------------
+
+* check whether XFMG installed before doing lookup on media item for BBCode rendering
+
 2.0.1 (2020-06-09)
 ------------------
 
