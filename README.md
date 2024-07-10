@@ -56,7 +56,7 @@ If you just want to use the thread and post tags, you can always disable the oth
 Requirements
 ------------
 
-This addon requires PHP 5.4 or higher and has been tested with XF v2.0, v2.1 and v2.2b2 
+This addon requires PHP 5.4 or higher and has been tested with XF v2.2 and v2.3 
 
 Usage
 -----
