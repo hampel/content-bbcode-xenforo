@@ -43,6 +43,12 @@ class Xfmg
 				break;
 			case "thumb":
 
+                // if Media Gallery not installed, just return a simple rendering
+                if (!array_key_exists('XFMG', \XF::app()->container('addon.cache')))
+                {
+                    return "[Media: {$text}]";
+                }
+
 				/** @var MediaItem $mediaItem */
 				$media = \XF::em()->find('XFMG:MediaItem', $id, ['Attachment']);
 
