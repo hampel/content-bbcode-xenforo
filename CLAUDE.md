@@ -34,12 +34,16 @@ Conventions every callback follows, and a new or changed one should too:
 
 `Setup.php` does nothing except enqueue XF 2.3's post-upgrade cleanup.
 
-### Declared compatibility is wider than the dev tooling
+### The floor is XenForo 2.2, and that constrains the code two ways
 
-`addon.json` declares PHP 5.4+ and XF 2.0+, and the runtime code in `BbCode/` and `Setup.php` is
-written to that floor — no scalar or return type declarations, no `??`. Keep it that way unless
-the requirement in `addon.json` is raised deliberately. The test suite needs a much newer PHP
-(PHPUnit 10); that constraint applies to `tests/` only.
+`addon.json` requires XF 2.2.0+ and declares no PHP version of its own, so XF 2.2's PHP 7.0
+minimum applies. Runtime code in `BbCode/` and `Setup.php` must therefore:
+
+- **run on PHP 7.0** — no nullable or `void` types, no typed properties, nothing later;
+- **name core classes by their pre-2.3 names** (`XF\Repository\Tag`, not `TagRepository`). XF 2.3
+  aliases the old names forward; XF 2.2 has no alias for the new ones and fatals.
+
+The test suite needs a much newer PHP (PHPUnit 10); that constraint applies to `tests/` only.
 
 ## Commands
 

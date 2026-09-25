@@ -13,13 +13,9 @@
         "Git Repository": "https://github.com/hampel/content-bbcode-xenforo"
     },
     "require": {
-        "php": [
-            "5.4.0",
-            "PHP 5.4+"
-        ],
         "XF": [
-            "2000070",
-            "XenForo 2.0.0+"
+            "2020070",
+            "XenForo 2.2.0+"
         ]
     },
     "icon": "fa-link"
