@@ -10,39 +10,31 @@ class Search
 
 		if (empty($tagOption))
 		{
-			$term = $renderer->renderSubTreePlain($tagChildren);
-			$text = $renderer->filterString($term, ['stopSmilies' => 1, 'stopBreakConversion' => 1] + $options);
-			$text = htmlspecialchars($text);
+			// no option - the body is the search term
 			$type = 'forum';
+			$term = trim($renderer->renderSubTreePlain($tagChildren));
+			$text = htmlspecialchars($term);
 		}
 		else
 		{
-			$parts = explode(',', $tagOption);
-			foreach ($parts AS &$part)
+			// split on the first comma only, so the search term may contain commas
+			$parts = explode(',', $tagOption, 2);
+			$type = strtolower(trim($parts[0]));
+
+			if (isset($parts[1]) && trim($parts[1]) !== '')
 			{
-				$part = trim($part);
-				$part = str_replace(' ', '', $part);
-			}
-
-			if (count($parts) == 1)
-			{
-				$term = $renderer->renderSubTreePlain($tagChildren);
-
-				$text = $renderer->filterString($term, ['stopSmilies' => 1, 'stopBreakConversion' => 1] + $options);
-				$text = htmlspecialchars($text);
-
-				$type = $renderer->filterString(array_shift($parts), ['stopSmilies' => 1, 'stopBreakConversion' => 1] + $options);
+				// search term given in the option - the body is the link text
+				$term = trim($parts[1]);
+				$text = $renderer->renderSubTree($tagChildren, $options);
 			}
 			else
 			{
-				$text = $renderer->renderSubTree($tagChildren, $options);
-				$type = $renderer->filterString(array_shift($parts), ['stopSmilies' => 1, 'stopBreakConversion' => 1] + $options);
-
-				$term = $renderer->filterString(array_shift($parts), ['stopSmilies' => 1, 'stopBreakConversion' => 1] + $options);
+				// search type only - the body is the search term
+				$term = trim($renderer->renderSubTreePlain($tagChildren));
+				$text = htmlspecialchars($term);
 			}
 		}
 
-		$term = urlencode($term);
 		$router = \XF::app()->router('public');
 		$formatter = \XF::app()->stringFormatter();
 
