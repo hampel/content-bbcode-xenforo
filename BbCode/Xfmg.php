@@ -58,7 +58,7 @@ class Xfmg
 				if (!$media->canView($error))
 				{
 					// just build a link instead
-					$url = $router->buildLink('canonical:xengallery', ['media_id' => $id]);
+					$url = $router->buildLink('canonical:media', ['media_id' => $id]);
 				}
 				else
 				{
