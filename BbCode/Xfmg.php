@@ -20,8 +20,7 @@ class Xfmg
 		$type = strtolower($type);
 		$id = intval(array_shift($parts));
 
-		$text = $renderer->filterString(array_shift($tagChildren), ['stopSmilies' => 1, 'stopBreakConversion' => 1] + $options);
-		$text = htmlspecialchars($text);
+		$text = $renderer->renderSubTree($tagChildren, $options);
 
 		$format = "link";
 		$router = \XF::app()->router('public');
