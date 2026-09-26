@@ -49,7 +49,7 @@ class XfmgBbCodeTest extends BbCodeTestCase
 		$this->assertBbCode('<div class="bbWrapper">' . $img . '</div>', '[xfmg=img,1][/xfmg]', 'emailHtml');
 
 		// html renders through the lightbox template, whose markup belongs to XenForo
-		$html = $this->app()->bbCode()->render('[xfmg=img,1][/xfmg]', 'html', 'unitTest', null);
+		$html = $this->renderBbCode('[xfmg=img,1][/xfmg]');
 
 		$this->assertSee($html, 'src="' . $src . '"', false);
 		$this->assertSee($html, 'class="bbImage', false);
@@ -107,11 +107,6 @@ class XfmgBbCodeTest extends BbCodeTestCase
 			$media->shouldReceive('getThumbnailUrl')->andReturn($thumbnailUrl);
 		}
 
-		$this->mockFinder('XFMG:MediaItem', function ($finder) use ($id, $media)
-		{
-			$finder->shouldReceive('whereId')->with($id)->andReturnSelf();
-			$finder->shouldReceive('with')->andReturnSelf();
-			$finder->shouldReceive('fetchOne')->andReturn($media);
-		});
+		$this->mockFind('XFMG:MediaItem', $id, $media);
 	}
 }

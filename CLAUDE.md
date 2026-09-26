@@ -63,7 +63,7 @@ does so for every add-on in the install. `build-release` runs the scoped export 
 
 ### Tests
 
-PHPUnit 12 via `hampel/xenforo-test-framework` 5, which boots the XF app of the install this
+PHPUnit 12 via `hampel/xenforo-test-framework` 5.7, which boots the XF app of the install this
 add-on sits in (`tests/TestCase.php` sets `$rootDir` to the install root). `vendor/` is gitignored.
 
 ```bash
@@ -82,7 +82,7 @@ vendor/bin/phpunit --filter test_term_is_encoded_once     # one test
   since 2.0.3 has a regression test that fails against the old code.
 - **`BbCodeDefinitionsTest` checks the two halves agree**: every `_output/bb_codes/` definition
   names a callable callback, and the installed row matches the file.
-- **`[xfmg=thumb]` is tested with a mocked `XFMG:MediaItem` finder**, so it needs no gallery
+- **`[xfmg=thumb]` is tested with `mockFind('XFMG:MediaItem', …)`**, so it needs no gallery
   content. The unparsed-tag assertions pass even if a tag is not registered; they are evidence
   only beside the link assertions in the same class.
 
