@@ -46,7 +46,7 @@ minimum applies. Runtime code in `BbCode/` and `Setup.php` must therefore:
 - **name core classes by their pre-2.3 names** (`XF\Repository\Tag`, not `TagRepository`). XF 2.3
   aliases the old names forward; XF 2.2 has no alias for the new ones and fatals.
 
-The test suite needs a much newer PHP (PHPUnit 10); that constraint applies to `tests/` only.
+The test suite needs PHP 8.3 (framework 5, PHPUnit 12); that constraint applies to `tests/` only.
 
 ## Commands
 
@@ -63,17 +63,28 @@ does so for every add-on in the install. `build-release` runs the scoped export 
 
 ### Tests
 
-PHPUnit via `hampel/xenforo-test-framework`, which boots the XF app of the install this add-on
-sits in (`tests/TestCase.php` sets `$rootDir` to the install root). `vendor/` is gitignored.
+PHPUnit 12 via `hampel/xenforo-test-framework` 5, which boots the XF app of the install this
+add-on sits in (`tests/TestCase.php` sets `$rootDir` to the install root). `vendor/` is gitignored.
 
 ```bash
-composer install                                        # first time
-vendor/bin/phpunit                                      # whole suite
-vendor/bin/phpunit --filter test_bbcode_post_id_in_body # one test
+composer install                                          # first time
+vendor/bin/phpunit                                        # whole suite
+vendor/bin/phpunit --testsuite Feature                    # one suite
+vendor/bin/phpunit --filter SearchBbCodeTest              # one class
+vendor/bin/phpunit --filter test_term_is_encoded_once     # one test
 ```
 
-Only `[post]` has tests so far (`tests/Feature/PostBbCodeTest.php`). They use `assertBbCode()`
-against the `html`, `simpleHtml` and `emailHtml` renderers — the three outputs that differ.
+- **`$addonsToLoad` is what makes the suite run at all.** Without it XF registers every installed
+  add-on's Composer autoloader, and one that vendors a different PHPUnit major kills the run before
+  the first test.
+- **`tests/Feature/BbCodeTestCase.php` renders each tag through `html`, `simpleHtml` and
+  `emailHtml`** — the three outputs that differ. One `<Tag>BbCodeTest` per tag; each bug fixed
+  since 2.0.3 has a regression test that fails against the old code.
+- **`BbCodeDefinitionsTest` checks the two halves agree**: every `_output/bb_codes/` definition
+  names a callable callback, and the installed row matches the file.
+- **`[xfmg=thumb]` is tested with a mocked `XFMG:MediaItem` finder**, so it needs no gallery
+  content. The unparsed-tag assertions pass even if a tag is not registered; they are evidence
+  only beside the link assertions in the same class.
 
 ## Release packaging
 
