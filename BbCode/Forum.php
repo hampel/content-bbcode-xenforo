@@ -26,19 +26,15 @@ class Forum
 		if ($forum_id > 0)
 		{
 			$router = \XF::app()->router('public');
-			$formatter = \XF::app()->stringFormatter();
 
 			$url = $router->buildLink('canonical:forums', ['node_id' => $forum_id]);
-
-			$linkInfo = $formatter->getLinkClassTarget($url);
-			$classAttr = $linkInfo['class'] ? " class=\"$linkInfo[class]\"" : '';
 
 			if (empty($text))
 			{
 				$text = $url;
 			}
 
-			return '<a href="' . htmlspecialchars($url) . '"' . $classAttr . '>' . $text . '</a>';
+			return Link::render($url, $text, $options, $renderer);
 		}
 		else
 		{

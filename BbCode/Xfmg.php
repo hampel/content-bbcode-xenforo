@@ -73,12 +73,7 @@ class Xfmg
 
 		if ($format == 'link')
 		{
-			$formatter = \XF::app()->stringFormatter();
-			$linkInfo = $formatter->getLinkClassTarget($url);
-
-			$classAttr = $linkInfo['class'] ? " class=\"$linkInfo[class]\"" : '';
-
-			return '<a href="' . htmlspecialchars($url) . '"' . $classAttr . '>' . $text . '</a>';
+			return Link::render($url, $text, $options, $renderer);
 		}
 		else
 		{

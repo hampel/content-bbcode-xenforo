@@ -27,17 +27,12 @@ class Resource
 			$router = \XF::app()->router('public');
 			$url = $router->buildLink('canonical:resources', ['resource_id' => $resource_id]);
 
-			$formatter = \XF::app()->stringFormatter();
-			$linkInfo = $formatter->getLinkClassTarget($url);
-
-			$classAttr = $linkInfo['class'] ? " class=\"$linkInfo[class]\"" : '';
-
 			if (empty($text))
 			{
 				$text = $url;
 			}
 
-			return '<a href="' . htmlspecialchars($url) . '"' . $classAttr . '>' . $text . '</a>';
+			return Link::render($url, $text, $options, $renderer);
 		}
 		else
 		{

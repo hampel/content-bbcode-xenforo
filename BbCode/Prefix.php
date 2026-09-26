@@ -46,16 +46,11 @@ class Prefix
 
 		$router = \XF::app()->router('public');
 		$url = $router->buildLink("canonical:{$route}", [$key => $content_id], ['prefix_id' => $prefix_id]);
-		$formatter = \XF::app()->stringFormatter();
-		$linkInfo = $formatter->getLinkClassTarget($url);
-
-		$classAttr = $linkInfo['class'] ? " class=\"$linkInfo[class]\"" : '';
-
 		if (empty($text))
 		{
 			$text = $url;
 		}
 
-		return '<a href="' . htmlspecialchars($url) . '"' . $classAttr . '>' . $text . '</a>';
+		return Link::render($url, $text, $options, $renderer);
 	}
 }

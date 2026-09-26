@@ -36,7 +36,6 @@ class Search
 		}
 
 		$router = \XF::app()->router('public');
-		$formatter = \XF::app()->stringFormatter();
 
 		// TODO: add more descriptive text to tags without body text, eg "Search Results for Query: <keyword>"
 		// TODO: custom search options
@@ -107,41 +106,6 @@ class Search
 				return $text;
 		}
 
-		$linkInfo = $formatter->getLinkClassTarget($url);
-		$rels = [];
-
-		$classAttr = $linkInfo['class'] ? " class=\"$linkInfo[class]\"" : '';
-		$targetAttr = $linkInfo['target'] ? " target=\"$linkInfo[target]\"" : '';
-
-		if (!$linkInfo['trusted'] && !empty($options['noFollowUrl']))
-		{
-			$rels[] = 'nofollow';
-		}
-
-		if ($linkInfo['target'])
-		{
-			$rels[] = 'noopener';
-		}
-
-		$proxyAttr = '';
-		if (empty($options['noProxy']))
-		{
-			$proxyUrl = $formatter->getProxiedUrlIfActive('link', $url);
-			if ($proxyUrl)
-			{
-				$proxyAttr = ' data-proxy-href="' . htmlspecialchars($proxyUrl) . '"';
-			}
-		}
-
-		if ($rels)
-		{
-			$relAttr = ' rel="' . implode(' ', $rels) . '"';
-		}
-		else
-		{
-			$relAttr = '';
-		}
-
-		return '<a href="' . htmlspecialchars($url) . '"' . $targetAttr . $classAttr . $proxyAttr . $relAttr . '>' . $text . '</a>';
+		return Link::render($url, $text, $options, $renderer);
 	}
 }

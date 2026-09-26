@@ -25,10 +25,13 @@ Conventions every callback follows, and a new or changed one should too:
 - **Links are built with `canonical:` routes** through the public router, so stored content never
   embeds the board URL. That independence from the site URL is the add-on's reason for existing.
 - **An option that fails to parse renders the tag unparsed** (`$renderer->renderUnparsedTag()`)
-  rather than throwing or emitting an empty link. `[thread]` and `[post]` also accept the ID as the
-  tag body, and then display the full URL as the link text.
-- **`SimpleHtml` and `EmailHtml` renderers get a bare `<a href>`**, with no `class` or `target`
-  from `getLinkClassTarget()`. The `html` renderer gets both.
+  rather than throwing or emitting an empty link. `[thread]`, `[post]`, `[forum]` and `[resource]`
+  also accept the ID as the tag body, and then display the full URL as the link text.
+- **Link text is rendered with `renderSubTree()`, which escapes it once.** Escaping its result
+  again, or passing a child node to `filterString()`, is the bug this add-on has shipped before.
+- **Every anchor comes from `BbCode\Link::render()`**, which is a helper, not a tag. It gives the
+  `SimpleHtml` and `EmailHtml` renderers a bare `<a href>`, and the `html` renderer the class,
+  target, `rel` and link-proxy attributes XF's own `[url]` would get.
 - **XFMG and XFRM are optional.** `Xfmg` checks `addon.cache` for `XFMG` before looking up a
   media item; any new lookup against an optional add-on's entities needs the same guard.
 

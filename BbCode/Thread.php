@@ -32,23 +32,11 @@ class Thread
 		}
 
 		$router = \XF::app()->router('public');
-		$formatter = \XF::app()->stringFormatter();
 
 		$link = $router->buildLink('canonical:threads', ['thread_id' => $id]);
 
 		if (empty($children)) $children = $link; // using the body as id, so render a full URL to display in the thread instead
 
-		if ($renderer instanceof \XF\BbCode\Renderer\SimpleHtml
-			|| $renderer instanceof \XF\BbCode\Renderer\EmailHtml)
-		{
-			return '<a href="' . htmlspecialchars($link) . '">' . $children . '</a>';
-		}
-
-		$linkInfo = $formatter->getLinkClassTarget($link);
-
-		$classAttr = $linkInfo['class'] ? " class=\"$linkInfo[class]\"" : '';
-		$targetAttr = $linkInfo['target'] ? " target=\"$linkInfo[target]\"" : '';
-
-		return '<a href="' . htmlspecialchars($link) . '"' . $targetAttr . $classAttr . '>' . $children . '</a>';
+		return Link::render($link, $children, $options, $renderer);
 	}
 }
