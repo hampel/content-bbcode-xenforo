@@ -16,7 +16,6 @@ class Prefix
 		$prefix_id = intval(array_shift($parts));
 
 		$text = $renderer->renderSubTree($tagChildren, $options);
-		$text = htmlspecialchars($text);
 
 		$map = [
 			'forums' => ['route' => 'forums', 'key' => 'node_id'],
