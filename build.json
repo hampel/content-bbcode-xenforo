@@ -8,6 +8,7 @@
 		"rm -v _build/upload/src/addons/{addon_id}/phpunit.xml",
 		"rm -v -r _build/upload/src/addons/{addon_id}/tests",
 		"rm -v -r _build/upload/src/addons/{addon_id}/vendor",
+		"rm -rfv _build/upload/src/addons/{addon_id}/.phpunit.cache _build/upload/src/addons/{addon_id}/.phpunit.result.cache",
 		"mv -v _build/upload/src/addons/{addon_id}/*.md _build/"
 	]
 }
