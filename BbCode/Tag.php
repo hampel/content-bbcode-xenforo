@@ -12,8 +12,7 @@ class Tag
 		else
 		{
 			$term = $renderer->renderSubTreePlain($tagChildren);
-			$text = $renderer->filterString($term, ['stopSmilies' => 1, 'stopBreakConversion' => 1] + $options);
-			$text = htmlspecialchars($text);
+			$text = htmlspecialchars($term);
 		}
 
 		/** @var \XF\Repository\Tag $tagRepo */
