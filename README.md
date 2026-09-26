@@ -1,69 +1,65 @@
-Content BBCode for XenForo 2.x
-==============================
+# Content BBCode for XenForo 2.x
 
 Note: this XenForo 2.x addon replaces the `ThreadPostBbCode` addon released for XF 2.0
 
 By [Simon Hampel](https://xenforo.com/community/members/sim.4264/).
 
-* [Addon: Content BBCode](https://xenforo.com/community/resources/content-bbcode.6484/)
-* [Discussion and support: Content BBCode](https://xenforo.com/community/threads/content-bbcode.148692/)
-
+- [Addon: Content BBCode](https://xenforo.com/community/resources/content-bbcode.6484/)
+- [Discussion and support: Content BBCode](https://xenforo.com/community/threads/content-bbcode.148692/)
 
 This addon creates additional BBCodes for linking to various content found on XenForo forums:
- 
- * thread
- * post
- * search (see below for details)
- * tag
- * xfmg
- 	* media
- 	* category
- 	* album
- 	* image
- 	* thumbnail
- * forum (node)
- * prefix
- 	* thread
- 	* resource
- * resource
- 
+
+- thread
+- post
+- search (see below for details)
+- tag
+- xfmg
+  - media
+  - category
+  - album
+  - image
+  - thumbnail
+- forum (node)
+- prefix
+  - thread
+  - resource
+- resource
+
 The search tag has options allowing you to link to searches across multiple content types:
- 
- * forums
- * threads
- * posts
- * resources
- * media
- * media comments
- * user profiles
- * tags
- * Google
- 	* site search
- 	* web search
- 	* image search
- 	* map search
- 	* video search
- 	* news search
+
+- forums
+- threads
+- posts
+- resources
+- media
+- media comments
+- user profiles
+- tags
+- Google
+  - site search
+  - web search
+  - image search
+  - map search
+  - video search
+  - news search
 
 This addon was originally created to replicate the `[THREAD]` and `[POST]` BBCodes which were used in vBulletin and may
 be present in post content after migration.
 
-The additional BBCode tags were added primarily to support some forum statistics scripts I had written for my sites as 
+The additional BBCode tags were added primarily to support some forum statistics scripts I had written for my sites as
 I needed a way of programmatically generating links which were also independent of the site URL.
 
 If you just want to use the thread and post tags, you can always disable the other custom bbcode tags in the admin UI.
 
-Requirements
-------------
+## Requirements
 
 This addon requires PHP 7.0 or higher and XenForo 2.2 or higher, and has been tested with XF v2.2 and v2.3.
 
-Usage
------
+## Usage
 
 In post content (or anywhere that BBCode is allowed), the following substitutions will occur:
 
-**THREAD**
+### Thread
 
 ```bbcode
 [thread=1]see this thread[/thread]
@@ -87,7 +83,7 @@ Alternative syntax:
 <a href="http://www.example.com/threads/1/">http://www.example.com/threads/1/</a>
 ```
 
-**POST**
+### Post
 
 ```bbcode
 [post=2]see this post[/post]
@@ -99,7 +95,7 @@ Alternative syntax:
 <a href="http://www.example.com/posts/2/">see this post</a>
 ```
 
-**SEARCH**
+### Search
 
 Examples:
 
@@ -113,17 +109,18 @@ Examples:
 [search=resource,foo]search resources for 'foo'[/search]
 [search=media,foo]search media uploads for 'foo'[/search]
 [search=comments,foo]search media comments for 'foo'[/search]
-[search=tag,foo]search tags for 'foo'[/search] 
+[search=profiles,foo]search profile posts for 'foo'[/search]
+[search=tag,foo]search tags for 'foo'[/search]
 
-[search=site,foo]Google site search for 'foo'[/search] (search google with 'site:example.com' tag to perform a Google search of your site
+[search=site,foo]Google site search for 'foo'[/search] (search google with 'site:example.com' tag to perform a Google search of your site)
 [search=web,foo]Google web search for 'foo'[/search]
 [search=image,foo]Google image search for 'foo'[/search]
 [search=map,foo]Google map search for 'foo'[/search]
 [search=video,foo]Google video search for 'foo'[/search]
-[search=news,foo]Google new search for 'foo'[/search]
+[search=news,foo]Google news search for 'foo'[/search]
 ```
 
-**TAG**
+### Tag
 
 Examples:
 
@@ -137,7 +134,7 @@ Examples:
 <a href="http://www.example.com/tags/foo-bar/">link to the tag 'foo bar'</a>
 ```
 
-**XFMG**
+### XFMG
 
 Examples:
 
@@ -176,7 +173,7 @@ Similarly, you may display a thumbnail as follows:
 [xfmg=thumb,1][/xfmg]
 ```
 
-**FORUM**
+### Forum
 
 Examples:
 
@@ -190,7 +187,7 @@ Examples:
 <a href="http://www.example.com/forums/1">link to this forum node</a>
 ```
 
-**PREFIX**
+### Prefix
 
 Examples:
 
@@ -208,7 +205,7 @@ Examples:
 <a href="http://www.example.com/resources/categories/2/?prefix_id=3">link to this prefix for a resource category</a>
 ```
 
-**RESOURCE**
+### Resource
 
 ```bbcode
 [resource=1]link to this resource[/resource]
