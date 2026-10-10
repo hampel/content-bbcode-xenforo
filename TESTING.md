@@ -5,8 +5,8 @@ still needs a person with a browser. Read it before a release.
 
 ## Surfaces
 
-**No class extensions, code event listeners, template modifications or options.** Everything the
-add-on does happens while BB code is rendered.
+**No class extensions, template modifications or options.** Everything the add-on does for a
+forum happens while BB code is rendered; its one code event listener only describes it.
 
 | surface | what it is |
 |---|---|
@@ -14,6 +14,7 @@ add-on does happens while BB code is rendered.
 | 32 phrases | the title, description, example and output text for each tag, shown in the admin UI and on the BB code help page |
 | `BbCode\Link` | builds the `<a>` for every tag; not a BB code itself |
 | `Setup::postUpgrade()` | queues XenForo's post-upgrade file clean-up, on XenForo 2.3 and later only |
+| `Listener::adminApiRedaction()` | answers `hampel_admin_api_redaction` with an empty secrets declaration; never fires unless an add-on defining that event is installed |
 
 ## Fragile points
 

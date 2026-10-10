@@ -9,8 +9,9 @@ before changing a tag's behaviour.
 
 ## Architecture
 
-**There are no class extensions, code event listeners or templates.** Each tag is a XenForo
-custom BB code in callback mode, and the whole add-on is two halves that must agree:
+**There are no class extensions or templates, and one code event listener that renders nothing.**
+Each tag is a XenForo custom BB code in callback mode, and the whole add-on is two halves that
+must agree:
 
 - `_output/bb_codes/<tag>.json` — the definition: `has_option`, `option_regex`, flags such as
   `disable_autolink`, and `callback_class`/`callback_method`.
@@ -36,6 +37,13 @@ Conventions every callback follows, and a new or changed one should too:
   media item; any new lookup against an optional add-on's entities needs the same guard.
 
 `Setup.php` does nothing except enqueue XF 2.3's post-upgrade cleanup.
+
+`Listener::adminApiRedaction()` answers the `hampel_admin_api_redaction` code event, declaring
+which of the add-on's settings are secrets to an Admin API add-on where one is installed. The
+list is empty because the add-on has no options and reads no `config.php` keys of its own.
+**Adding an option or a `config.php` key means updating that declaration in the same commit**;
+`tests/Unit/SecretsDeclarationTest.php` fails on a credential-named option nobody has decided
+about. The event is not a dependency: on a forum where nothing defines it, it never fires.
 
 ### The floor is XenForo 2.2, and that constrains the code two ways
 
