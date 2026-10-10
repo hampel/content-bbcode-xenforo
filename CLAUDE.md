@@ -45,6 +45,20 @@ list is empty because the add-on has no options and reads no `config.php` keys o
 `tests/Unit/SecretsDeclarationTest.php` fails on a credential-named option nobody has decided
 about. The event is not a dependency: on a forum where nothing defines it, it never fires.
 
+### No `config` or `validate` command, deliberately
+
+**The add-on has nothing to report that the forum does not already show**, so it adds no CLI
+commands (decided 2026-10-11). Each of the three questions that would earn them is a "no":
+
+- **no setting is opaque** — the add-on has no options at all;
+- **nothing runs unattended** — no cron entries, no jobs of its own and no outbound calls; the one
+  job it queues is XenForo's own file clean-up, once after an upgrade;
+- **the admin panel already has it on one screen** — the custom BB codes list shows all eight tags,
+  each with its active toggle.
+
+Reopen this if the add-on gains an option holding a credential, an endpoint or a path, or any
+scheduled or queued work of its own.
+
 ### The floor is XenForo 2.2, and that constrains the code two ways
 
 `addon.json` requires XF 2.2.0+ and declares no PHP version of its own, so XF 2.2's PHP 7.0
