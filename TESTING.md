@@ -54,9 +54,12 @@ regression test before trusting it; a test that still passes with its fix remove
 
 ## Needs a human
 
-- **`[xfmg=thumb]` against a real gallery.** Post `[xfmg=thumb,<id>]x[/xfmg]` for a media item a
-  guest cannot view; as a guest it should link to `media/<id>/`, and as a member who can view it,
-  it should show the thumbnail. The suite mocks this lookup.
+- **`[xfmg=thumb]` against a real gallery.** The suite mocks this lookup, so check it on a forum
+  holding a media item in a private album. Rendered for a guest, `[xfmg=thumb,<id>]x[/xfmg]`
+  should link to `media/<id>/`; rendered for the album's owner, it should show the thumbnail.
+  This one needs the content rather than a browser: the `Media` seeder of the `Hampel/Seeder`
+  add-on creates such an item (`seeder:run Media -p hidden=1`), and without that add-on one can
+  be uploaded by hand. Last checked 2026-10-11 on XenForo 2.3, both ways.
 - **`[xfmg=img]` with the lightbox.** The `html` output is XenForo's image template; check in a
   browser that clicking it opens the lightbox.
 - **The upgrade from the last published version.** Install that release's zip on a forum, post one
