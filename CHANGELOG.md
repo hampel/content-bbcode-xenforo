@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+2.1.1 (2026-10-11)
+------------------
+
+* declare that the add-on has no secret settings, via the `hampel_admin_api_redaction` code event - no effect unless an add-on that defines that event is installed
+
 2.1.0 (2026-09-26)
 ------------------
 
